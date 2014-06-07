@@ -19,3 +19,8 @@ $("#gdrive").click(function() {
 	});
 });
 
+//Run setup when everything's loaded
+$(function () {
+  window.onload = BOX.setup;
+});
+

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
-import os
-from bottle import route, run, static_file, view
+from bottle import route, static_file, view, request, default_app
 
 
 @route('/js/<filename>')
@@ -29,6 +28,13 @@ def font_static(filename):
 def hello():
     return dict(content="Hello from Python!")
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    run(host='0.0.0.0', port=port, debug=True)
+
+@route("/redirect")
+def redirect():
+    return str(request.query.code)
+
+application = default_app()
+
+# if __name__ == "__main__":
+#     port = int(os.environ.get("PORT", 5000))
+#     run(host='0.0.0.0', port=port, debug=True)
