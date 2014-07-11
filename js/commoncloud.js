@@ -1,8 +1,13 @@
 var cloud = cloud || {};
+cloud.CC_URL = 'http://0.0.0.0:5000/';
 
 $("#box").click(function() {
-	alert("123")
-  $(".list-group").show()
+    $.ajax({
+    url: "http://0.0.0.0:5000/box",
+    success: function(response) {
+      window.open(response);
+    }
+  });
 });
 
 $("#dropbox").click(function() {
@@ -18,9 +23,3 @@ $("#gdrive").click(function() {
     	ul.append($(document.createElement('a')).attr("href", "#").attr("class","list-group-item").text(item));
 	});
 });
-
-//Run setup when everything's loaded
-$(function () {
-  window.onload = BOX.setup;
-});
-

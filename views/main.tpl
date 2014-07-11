@@ -9,6 +9,7 @@
 
     <!-- The styles -->
     <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/folder.css" rel="stylesheet">
   </head>
 
   <body>
@@ -39,26 +40,22 @@
 
   <div class="panel panel-primary">
     <div class="panel-heading">Documents</div>
-     <ul class="list-group">
-      <a href="#" li class="list-group-item">
-        <span class="glyphicon glyphicon-folder-close" style="float:left;width: 20px;"></span>
-        Test
-        <span class="glyphicon glyphicon-chevron-right" style="float:right"></span>
-      </a>
-      <a href="#" li class="list-group-item">One</a>
-      <a href="#" li class="list-group-item">Two</a>
-      <a href="#" li class="list-group-item">Three</a>
-      <a href="#" li class="list-group-item">Four</a>
+     <ul class="list-group" id = "artifact-list">
     </ul>
   </div>
+  <img src="/img/ajax-loader.gif" id="loading-indicator" style="display:none" />
 
     <!-- The javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- But really should be async loaded -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
     <script src="/js/commoncloud.js"></script>
+    <script src="/js/router.js"></script>
     <script src="/js/bootstrap.js"></script>
     <script src="/js/box.js"></script>
+    <script src="/js/template.js"></script>
   </body>
 </html>

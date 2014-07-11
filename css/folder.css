@@ -1,0 +1,14 @@
+.gray {
+    color: gray;
+}
+
+.panel {
+margin-left: 20px;
+margin-right: 20px;
+}
+
+#loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
