@@ -56,6 +56,5 @@
     <script src="/js/router.js"></script>
     <script src="/js/bootstrap.js"></script>
     <script src="/js/box.js"></script>
-    <script src="/js/template.js"></script>
   </body>
 </html>

@@ -287,7 +287,7 @@ class BoxClient(object):
 
         return self._request("get", 'users/', params).json()
 
-    def get_folder(self, folder_id=0, limit=100, offset=0, fields=None):
+    def get_folder(self, folder_id=0, limit=100, offset=0, fields=None, etag=None):
         """
         Retrieves the metadata of a folder and child directory/files.
 
@@ -298,6 +298,10 @@ class BoxClient(object):
             - fields: (optional) Attribute(s) to include in the response
         """
 
+        headers = {}
+        if etag:
+            headers['If-Match'] = etag
+
         params = {
             'limit': limit,
             'offset': offset,
@@ -306,7 +310,7 @@ class BoxClient(object):
         if fields:
             params['fields'] = ','.join(fields)
 
-        return self._request("get", 'folders/{0}'.format(folder_id), params=params).json()
+        return self._request("get", 'folders/{0}'.format(folder_id), params=params, headers=headers).json()
 
     def get_folder_content(self, folder_id=0, limit=100, offset=0, fields=None):
         """

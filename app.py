@@ -72,7 +72,7 @@ def users():
 
 @route("/folder/:folder_id")
 def folder(folder_id=0):
-    response = client.get_folder(folder_id=0)
+    response = client.get_folder(folder_id)
     return response
 
 # application = default_app()

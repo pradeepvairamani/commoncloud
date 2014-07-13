@@ -1,1 +1,0 @@
-<a href='#' li class='list-group-item'><%= name %></a>
